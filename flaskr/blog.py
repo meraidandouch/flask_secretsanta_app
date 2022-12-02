@@ -76,6 +76,7 @@ def create():
                 if len(dupes) != 0 :  # If two people bought the same person a gift, prompt the user 
                     flash ("Oh no! It looks like someone already bought this person a gift. Consider drawing a random or discussing with your group.")
                 else: 
+                    db = get_db()
                     db.execute(
                         'INSERT INTO setter (gifter_id, giftee_id) ' 
                         'SELECT u.id, ge.id ' 
