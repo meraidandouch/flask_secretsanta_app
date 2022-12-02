@@ -99,7 +99,8 @@ def create():
                     )
                 db.commit()
 
-            get_db().execute( # After assigning a giftee to a gifter, update the selected column value to yes 
+            db = get_db()
+            db.execute( # After assigning a giftee to a gifter, update the selected column value to yes 
             'UPDATE giftee ' 
             'SET selected = "yes" ' 
             'WHERE giftee.id IN ' 
