@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}New Draw{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <form method="post" action="/create">
+    <p>Are you a secret santa who already bought a gift? :</p>
+    <input type="radio" name="gifted" id="yes" value="yes"> yes </input><br>
+    <input type="radio" name="gifted" id="no" value="no"> no</input><br>
+
+    <p> If you answered yes above, please select the first name of the person you bought your gift for. If you did not buy a gift yet, please select "NA"!  :</p>
+    <div>
+      <label for="selected">Choose your giftee:</label>
+      <select name='selected' type = 'dropdown'>
+          <option value="NA" SELECTED>NA</option>
+          <option value="Merai">Merai</option>
+          <option value="Nathan">Nathan</option>
+          <option value="Chantel">Chantel</option>
+          <option value="Ethan">Ethan</option>
+          <option value="Noah">Noah</option>
+          <option value="Jonny">Jonny</option>
+          <option value="Rachael">Rachael</option>
+          <option value="Matt">Matt</option>
+      </select>
+    </div>
+    <input type="submit" value="Save">
+  </form>
+{% endblock %}
